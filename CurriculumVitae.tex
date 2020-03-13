@@ -1,0 +1,214 @@
+\documentclass[11pt,a4paper,sans, style=casual, color=color1,DIV=12]{komacv-fa5}
+\usepackage[languages={english,german}]{komacv-multilang}
+\usepackage[pro]{fontawesome5}%
+\usepackage[%
+  german
+%  english
+]{babel}
+\usepackage{fontspec}
+\setsansfont[Ligatures={Common}]{Vollkorn}
+
+\faStyle{light}%
+\usepackage[%
+  backend=biber,
+  style=numeric-comp,
+  giveninits=true,
+  natbib=true,
+  maxcitenames=5,
+  sorting=ydnt,
+  sortlocale=en_EN,
+  url=false,
+  doi=true,
+  eprint=true,
+  maxnames=99,
+  useprefix=false,
+]{biblatex}
+\addbibresource{publications.bib}%
+
+%
+% Translations
+%
+\DeclareTranslation{english}{since}{since}
+\DeclareTranslation{german}{since}{seit}
+%
+% Color settings
+%
+\definecolor{color0}{rgb}{0,0,0}% black
+\definecolor{color1}{HTML}{41A1C6}% my blue
+\definecolor{color2}{HTML}{104766}% my blue dark
+
+\colorlet{familynamecolor}{color1}
+\colorlet{firstnamecolor}{color1!50!white}
+\colorlet{acadtitlecolor}{color1}
+\setkomafont{hintfont}{\small}
+\setkomafont{firstnamefont}{\Huge}
+\setkomafont{familynamefont}{\Huge}
+\setkomafont{acadtitlefont}{\LARGE}
+\setlength{\hintscolwidth}{2.9cm}
+\setlength{\aftersubsecvspace}{.5\baselineskip}
+\setlength{\beforesecvspace}{.5\baselineskip}
+\setlength{\beforesubsecvspace}{.5\baselineskip}
+\setlength{\sepcolwidth}{.5em}
+
+\renewcommand*\acadtitle{M.~Sc.}%
+\renewcommand*\firstname{Firstname\ }%
+\renewcommand*\familyname{Lastname}%
+\renewcommand*\title{Curriculum Vitae}%
+
+\hypersetup{pdfauthor={Firstname Lastname},
+    pdftitle={Curriculum Vitae},
+    pdfkeywords={},
+    plainpages=false, pdfstartview=FitH, pdfview=FitH, pdfpagemode=UseOutlines,%
+    bookmarksnumbered=true,bookmarksopen=false,bookmarksopenlevel=0,%
+    colorlinks=true,linkcolor=black,citecolor=black,urlcolor=color2%
+}
+
+\begin{document}
+\maketitle
+\vspace{-2\baselineskip}
+\BasicEntry{%
+  header = {\faIcon{asterisk}},%
+  text/german = {Geburtstag, Ort.},
+  text/english = {Birthday, Place.}
+}
+\BasicEntry{%
+  header = {\faIcon{globe}},
+  text/german = {Staatsangehörigkeit.},
+  text/english = {nationality.}
+}
+\BasicEntry{%
+  header = {\faIcon{address-card}},
+  text/german = {Straße~Nr., xxxx Stadt, Land.},
+  text/english = {Street~No., xxxxx City, Country.}
+}
+%
+%
+%
+\begin{Section}{%
+    title/english = {Professional Record},
+    title/german = {Berufserfahrung},
+}
+    \EmploymentEntry{
+        when/daterange = {2020-01-01}{*},
+        title/english = {Job Position},
+        title/german = {Stelle},
+        employer = {Unternehmen/Company – brand so single language},
+        where/german = {Place},
+        where/english = {Place, Country},
+        description/german = {Beschriebung},
+        description/english = {Description},
+    }
+\end{Section}
+%
+%
+%
+\begin{Section}{
+    title/german =  {Abschlüsse},
+    title/english = {Degrees}
+}
+    \EducationEntry{
+    when/shortdate = {2020-01-31},
+    degree = {Degree},
+    institution/english = {Institution/university},
+    institution/german = {Institution/Universität},
+    where/german = {Place},
+    where/english = {Place, Country},
+    grade = {Grade},
+    details/english = {Details.\newline In multiple lines}
+    details/german = {Details.\newline In mehreren Zeilen}
+}
+\end{Section}
+%
+%
+%
+\begin{Section}{
+    title/english = {Studies},
+    title/german = {Studium \& Schulbildung}
+}
+    \EmploymentEntry{
+        when/daterange = {2014-01-01}{2019-12-31},
+        title/english = {Study Program},
+        title/german = {Studiengans},
+        employer = {Universität},
+        where/german = {Place},
+        where/english = {Place, Country},
+        description/german = {A longer description},
+        description/english = {A longer description},
+    }
+\end{Section}
+%
+%
+%
+\begin{Section}{
+  title/english = {Languages},
+  title/german = {Sprachen}
+  }
+  \CommentedEntry{
+    header/german = {deutsch},
+    header/english = {german},
+    text/english = {mother tongue},
+    text/german = {Muttersprache},
+    comment = {}
+  }
+  \CommentedEntry{
+    header/german = {englisch},
+    header/english = {english},
+    text/english = {fluent},
+    text/german = {fließend},
+    comment/german = {(in Wort und Schrift)},
+    comment/english = {(oral and written)},
+  }
+  \begin{SubSection}{
+      title/english = {Programming Languages},
+      title/german = {Programmiersprachen}
+  }
+  \BasicEntry{
+    header = {},
+    text = {C++, Java, JavaScript, Julia, Matlab, Mathematica, PHP, Python, Ruby}
+  }  
+  \BasicEntry{
+    header = {},
+    text = {CSS, Drupal, HTML, \LaTeX, MySQL, Typo3, Wordpress, Jekyll}
+  }  
+  \end{SubSection}
+\end{Section}
+%
+%
+%
+\begin{Section}{
+    title/english = {Open Source Software Projects},
+    title/german = {Open Source Software Projecte}
+}
+    \AchievementEntry{
+        when/german = {seit 2019},
+        when/english = {since 2019},
+        title = {Project A}
+        description/german = {Ein Project},
+        description/english = {A Project}
+    }
+\end{Section}
+%
+%
+%
+\begin{Section}{
+    title/german = {Publikationen},
+    title/english = {Publications}
+}
+    \nocite{*}%
+    \begin{SubSection}{title={Preprints}}
+        \begin{refcontext}
+            \newrefcontext[labelprefix=P]
+            \printbibliography[heading=none, type=online]
+        \end{refcontext}
+     \end{SubSection}
+     \begin{SubSection}{
+          title/english = {Articles in International Journals},
+          title/german = {Artikel in internationalen Fachzeitschriften}
+     }
+        \begin{refcontext}
+            \newrefcontext[labelprefix=A]
+            \printbibliography[heading=none,type=article,notkeyword=misc,resetnumbers]
+        \end{refcontext}
+    \end{SubSection}
+\end{Section}
+\end{document}
